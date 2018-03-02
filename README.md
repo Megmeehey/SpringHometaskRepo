@@ -1,5 +1,19 @@
-Skeleton project for Spring Core MOOC course on university.epam.com
+# Application for managing a Movie Theater
 
-Clone the repository using your EPAM's login and password.
+Simple Spring practice.
 
-The hometask assignment can be found on project [Wiki](https://git.epam.com/yuriy_tkach/spring-core-hometask-skeleton/wikis/home)
+## User roles
+
+#### ADMIN 
+* enter events
+* view purchased tickets
+
+#### USER
+* register
+* view events with air dates and times
+* get ticket price, 
+* buy tickets.
+
+### Author
+
+* **Vlad Mikheev** - [Megmeehey](https://github.com/Megmeehey)
