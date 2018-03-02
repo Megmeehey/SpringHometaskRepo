@@ -2,7 +2,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.epam.spring.core</groupId>
-    <artifactId>hometask-skeleton</artifactId>
+    <artifactId>movie-theater</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Spring Core Task</name>
     <description>A homework project for the students of Spring Core 36.3</description>
