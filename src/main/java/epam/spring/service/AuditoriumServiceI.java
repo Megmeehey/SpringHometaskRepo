@@ -10,18 +10,19 @@ public interface AuditoriumServiceI {
 
     /**
      * Getting all auditoriums from the system
-     * 
+     *
      * @return set of all auditoriums
      */
-    @Nonnull Set<Auditorium> getAll();
+    @Nonnull
+    Set<Auditorium> getAll();
 
     /**
      * Finding auditorium by name
-     * 
-     * @param name
-     *            Name of the auditorium
+     *
+     * @param name Name of the auditorium
      * @return found auditorium or <code>null</code>
      */
-    @Nullable Auditorium getByName(@Nonnull String name);
+    @Nullable
+    Auditorium getByName(@Nonnull String name);
 
 }

@@ -28,13 +28,13 @@ public class Auditorium extends AbstractEntity {
      */
     public long countVipSeats(Collection<Long> seats) {
         return seats.stream()
-                    .filter(seat -> vipSeats.contains(seat))
-                    .count();
+                .filter(seat -> vipSeats.contains(seat))
+                .count();
     }
 
     public Set<Long> getAllSeats() {
         return LongStream.range(1, numberOfSeats + 1)
-                         .boxed()
-                         .collect(Collectors.toSet());
+                .boxed()
+                .collect(Collectors.toSet());
     }
 }

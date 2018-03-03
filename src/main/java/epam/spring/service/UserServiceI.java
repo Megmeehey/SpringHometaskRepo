@@ -9,11 +9,11 @@ public interface UserServiceI extends DomainObjectServiceI<User> {
 
     /**
      * Finding user by email
-     * 
-     * @param email
-     *            Email of the user
+     *
+     * @param email Email of the user
      * @return found user or <code>null</code>
      */
-    @Nullable User getUserByEmail(@Nonnull String email);
+    @Nullable
+    User getUserByEmail(@Nonnull String email);
 
 }

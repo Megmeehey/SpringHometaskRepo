@@ -103,7 +103,7 @@ public class Event extends AbstractEntity {
      */
     public boolean airsOnDateTime(LocalDateTime dateTime) {
         return airDates.stream()
-                       .anyMatch(dt -> dt.equals(dateTime));
+                .anyMatch(dt -> dt.equals(dateTime));
     }
 
     /**
@@ -114,7 +114,7 @@ public class Event extends AbstractEntity {
      */
     public boolean airsOnDate(LocalDate date) {
         return airDates.stream()
-                       .anyMatch(dt -> dt.toLocalDate().equals(date));
+                .anyMatch(dt -> dt.toLocalDate().equals(date));
     }
 
     /**
@@ -127,7 +127,7 @@ public class Event extends AbstractEntity {
      */
     public boolean airsOnDates(LocalDate from, LocalDate to) {
         return airDates.stream()
-                       .anyMatch(dt -> dt.toLocalDate()
-                                         .compareTo(from) >= 0 && dt.toLocalDate().compareTo(to) <= 0);
+                .anyMatch(dt -> dt.toLocalDate()
+                        .compareTo(from) >= 0 && dt.toLocalDate().compareTo(to) <= 0);
     }
 }
