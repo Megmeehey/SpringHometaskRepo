@@ -9,7 +9,7 @@ import java.util.Collection;
  * @param <T>
  *            DomainObject subclass
  */
-interface AbstractDomainObjectService<T extends DomainObject> {
+interface DomainObjectServiceI<T extends DomainObject> {
 
     /**
      * Saving new object to storage or updating existing one

@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-public interface BookingService {
+public interface BookingServiceI {
 
     /**
      * Getting price when buying all supplied seats for particular event

@@ -7,7 +7,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.time.LocalDateTime;
 
-public interface DiscountService {
+public interface DiscountServiceI {
 
     /**
      * Getting discount based on some rules for user that buys some number of

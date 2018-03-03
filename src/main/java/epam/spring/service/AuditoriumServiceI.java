@@ -6,7 +6,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Set;
 
-public interface AuditoriumService {
+public interface AuditoriumServiceI {
 
     /**
      * Getting all auditoriums from the system
