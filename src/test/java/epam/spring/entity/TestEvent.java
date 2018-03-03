@@ -1,5 +1,6 @@
-package epam.spring.domain;
+package epam.spring.entity;
 
+import epam.spring.base.EventRating;
 import org.junit.Before;
 import org.junit.Test;
 

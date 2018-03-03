@@ -1,4 +1,4 @@
-package epam.spring.domain;
+package epam.spring.entity;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -15,7 +15,7 @@ import java.util.stream.LongStream;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = {"name", "numberOfSeats", "vipSeats"}, callSuper = true)
-public class Auditorium extends DomainObject {
+public class Auditorium extends AbstractEntity {
     private String name;
     private long numberOfSeats;
     private Set<Long> vipSeats = Collections.emptySet();

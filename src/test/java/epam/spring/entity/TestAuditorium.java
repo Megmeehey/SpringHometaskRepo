@@ -1,4 +1,4 @@
-package epam.spring.domain;
+package epam.spring.entity;
 
 import org.junit.Test;
 

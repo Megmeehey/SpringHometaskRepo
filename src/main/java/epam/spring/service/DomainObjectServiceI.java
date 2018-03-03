@@ -1,15 +1,15 @@
 package epam.spring.service;
 
-import epam.spring.domain.DomainObject;
+import epam.spring.entity.AbstractEntity;
 
 import javax.annotation.Nonnull;
 import java.util.Collection;
 
 /**
  * @param <T>
- *            DomainObject subclass
+ *            AbstractEntity subclass
  */
-interface DomainObjectServiceI<T extends DomainObject> {
+interface DomainObjectServiceI<T extends AbstractEntity> {
 
     /**
      * Saving new object to storage or updating existing one

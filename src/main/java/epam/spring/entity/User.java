@@ -1,4 +1,4 @@
-package epam.spring.domain;
+package epam.spring.entity;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -12,7 +12,7 @@ import java.util.TreeSet;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = {"firstName", "lastName", "email", "tickets"}, callSuper = true)
-public class User extends DomainObject {
+public class User extends AbstractEntity {
     private String firstName;
     private String lastName;
     private String email;

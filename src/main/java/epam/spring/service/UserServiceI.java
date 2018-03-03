@@ -1,6 +1,6 @@
 package epam.spring.service;
 
-import epam.spring.domain.User;
+import epam.spring.entity.User;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

@@ -1,6 +1,6 @@
 package epam.spring.service;
 
-import epam.spring.domain.Auditorium;
+import epam.spring.entity.Auditorium;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

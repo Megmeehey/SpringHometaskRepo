@@ -1,6 +1,6 @@
 package epam.spring.service;
 
-import epam.spring.domain.Event;
+import epam.spring.entity.Event;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

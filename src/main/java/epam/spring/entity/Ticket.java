@@ -1,4 +1,4 @@
-package epam.spring.domain;
+package epam.spring.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(exclude = {"user", "event", "dateTime", "seat"}, callSuper = true)
-public class Ticket extends DomainObject implements Comparable<Ticket> {
+public class Ticket extends AbstractEntity implements Comparable<Ticket> {
     private User user;
     private Event event;
     private LocalDateTime dateTime;

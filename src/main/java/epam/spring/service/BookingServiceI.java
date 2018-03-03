@@ -1,8 +1,8 @@
 package epam.spring.service;
 
-import epam.spring.domain.Event;
-import epam.spring.domain.Ticket;
-import epam.spring.domain.User;
+import epam.spring.entity.Event;
+import epam.spring.entity.Ticket;
+import epam.spring.entity.User;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;

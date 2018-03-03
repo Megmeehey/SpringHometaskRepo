@@ -1,5 +1,6 @@
-package epam.spring.domain;
+package epam.spring.entity;
 
+import epam.spring.base.EventRating;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.TreeSet;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = {"name", "airDates", "basePrice", "rating", "auditoriums"}, callSuper = true)
-public class Event extends DomainObject {
+public class Event extends AbstractEntity {
     private String name;
     private NavigableSet<LocalDateTime> airDates = new TreeSet<>();
     private double basePrice;
