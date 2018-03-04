@@ -1,5 +1,6 @@
 package epam.spring.repo.map;
 
+import epam.spring.UnitTest;
 import epam.spring.base.Status;
 import epam.spring.entity.Auditorium;
 import epam.spring.repo.AuditoriumRepoI;
@@ -7,6 +8,7 @@ import lombok.val;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,6 +21,8 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
+@Category(UnitTest.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 public class AuditoriumMapRepoTest {
 
     private static final Status DEFAULT_STATUS = Status.Enabled;

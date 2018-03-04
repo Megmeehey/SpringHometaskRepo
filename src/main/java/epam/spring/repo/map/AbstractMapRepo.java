@@ -6,6 +6,8 @@ import epam.spring.repo.AbstractRepoI;
 import epam.spring.util.ValidationUtils;
 import lombok.val;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -48,6 +50,11 @@ public abstract class AbstractMapRepo<T extends AbstractEntity> implements Abstr
             throw new IllegalArgumentException("Illegal id = " + entityId);
         }
         return source.get(entityId);
+    }
+
+    @Override
+    public List<T> findAll() {
+        return new ArrayList<>(source.values());
     }
 
     private void isValid(T entity) {}

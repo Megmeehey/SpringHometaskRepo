@@ -1,5 +1,6 @@
 package epam.spring.repo.map;
 
+import epam.spring.UnitTest;
 import epam.spring.base.EventRating;
 import epam.spring.base.Status;
 import epam.spring.entity.Auditorium;
@@ -9,6 +10,7 @@ import lombok.val;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -18,10 +20,14 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
+
+@Category(UnitTest.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 public class EventMapRepoTest {
     private static final Status DEFAULT_STATUS = Status.Enabled;
     private static final long THIRD_EVENT_ID = 3L;
@@ -168,14 +174,26 @@ public class EventMapRepoTest {
         assertThat(event.getBasePrice(), is(THIRD_EVENT_PRICE));
     }
 
+    @Test
+    public void findAll() {
+        assertNotNull(eventRepo);
+
+        val events = eventRepo.findAll();
+
+        assertNotNull(events);
+        assertThat(events, hasSize(3));
+
+        events.forEach(event -> {
+            assertNotNull(event);
+            assertNotNull(event.getId());
+            assertNotNull(event.getStatus());
+            assertNotNull(event.getName());
+            assertNotNull(event.getRating());
+        });
+    }
+
     @After
     public void tearDown() {
-        try {
-            for (int i = 1; i < 5; i++) {
-                eventRepo.deleteById((long) i);
-            }
-        }
-        catch (IllegalArgumentException ignored) {
-        }
+        eventRepo.findAll().forEach(event -> eventRepo.delete(event));
     }
 }
