@@ -10,8 +10,8 @@ import java.util.Set;
 @NoArgsConstructor
 public final class ValidationUtils {
 
-    public static boolean isValidId(final Long id) {
-        return id == null || id > 0;
+    public static boolean isValidLong(final Long id) {
+        return id != null && id > 0;
     }
 
     public static boolean isValidPrice(final double price) {

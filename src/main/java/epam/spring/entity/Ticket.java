@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 
 import javax.annotation.Nullable;
@@ -15,9 +16,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @EqualsAndHashCode(exclude = {"user", "event", "dateTime", "seat"}, callSuper = true)
 public class Ticket extends AbstractEntity implements Comparable<Ticket> {
-    private User user;
-    private Event event;
-    private LocalDateTime dateTime;
+    private @NonNull User user;
+    private @NonNull Event event;
+    private @NonNull LocalDateTime dateTime;
     private long seat;
 
     @Override

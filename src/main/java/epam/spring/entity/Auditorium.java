@@ -3,6 +3,7 @@ package epam.spring.entity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 
 import java.util.Collection;
@@ -16,7 +17,7 @@ import java.util.stream.LongStream;
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = {"name", "numberOfSeats", "vipSeats"}, callSuper = true)
 public class Auditorium extends AbstractEntity {
-    private String name;
+    private @NonNull String name;
     private long numberOfSeats;
     private Set<Long> vipSeats = Collections.emptySet();
 

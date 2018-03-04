@@ -37,7 +37,7 @@ public abstract class AbstractMapRepo<T extends AbstractEntity> implements Abstr
 
     @Override
     public T findById(Long entityId) {
-        if (!ValidationUtils.isValid(entityId)) {
+        if (!ValidationUtils.isValidLong(entityId)) {
             throw new IllegalArgumentException("Illegal id = " + entityId);
         }
         return source.get(entityId);
