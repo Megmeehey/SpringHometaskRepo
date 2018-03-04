@@ -5,7 +5,7 @@ import epam.spring.entity.Event;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public interface EventServiceI extends DomainObjectServiceI<Event> {
+public interface EventServiceI extends AbstractServiceI<Event> {
 
     /**
      * Finding event by name

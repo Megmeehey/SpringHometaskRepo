@@ -5,7 +5,7 @@ import epam.spring.entity.User;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public interface UserServiceI extends DomainObjectServiceI<User> {
+public interface UserServiceI extends AbstractServiceI<User> {
 
     /**
      * Finding user by email

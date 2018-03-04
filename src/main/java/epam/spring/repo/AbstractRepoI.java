@@ -2,7 +2,7 @@ package epam.spring.repo;
 
 import epam.spring.entity.AbstractEntity;
 
-public interface AbstractRepo<T extends AbstractEntity> {
+public interface AbstractRepoI<T extends AbstractEntity> {
 
     void save(T entity);
 

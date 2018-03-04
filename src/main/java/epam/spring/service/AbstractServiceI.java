@@ -8,7 +8,7 @@ import java.util.Collection;
 /**
  * @param <T> AbstractEntity subclass
  */
-interface DomainObjectServiceI<T extends AbstractEntity> {
+interface AbstractServiceI<T extends AbstractEntity> {
 
     /**
      * Saving new object to storage or updating existing one
