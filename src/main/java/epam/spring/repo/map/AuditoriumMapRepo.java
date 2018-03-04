@@ -22,3 +22,4 @@ public class AuditoriumMapRepo extends AbstractMapRepo<Auditorium> implements Au
         return new ArrayList<>(source.values());
     }
 }
+
