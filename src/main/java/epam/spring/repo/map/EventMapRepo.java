@@ -10,7 +10,7 @@ public class EventMapRepo extends AbstractMapRepo<Event> implements EventRepoI {
         if (ValidationUtils.isValidLong(entity.getId())
                 && ValidationUtils.isNotEmpty(entity.getName())
                 && ValidationUtils.isValidPrice(entity.getBasePrice())) {
-            throw new IllegalArgumentException("Event " + entity + " is not a valid event");
+            throw new IllegalArgumentException("Event " + entity + " is not a valid Event");
         }
     }
 }

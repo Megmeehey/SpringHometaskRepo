@@ -9,7 +9,7 @@ public class TicketMapRepo extends AbstractMapRepo<Ticket> implements TicketRepo
     private void isValid(@NonNull Ticket entity) {
         if (ValidationUtils.isValidLong(entity.getId())
                 && ValidationUtils.isValidLong(entity.getSeat())) {
-            throw new IllegalArgumentException("Event " + entity + " is not a valid event");
+            throw new IllegalArgumentException("Ticket " + entity + " is not a valid Ticket");
         }
     }
 }

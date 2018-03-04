@@ -10,7 +10,7 @@ public class AuditoriumMapRepo extends AbstractMapRepo<Auditorium> implements Au
                 if (ValidationUtils.isValidLong(entity.getId())
                 && ValidationUtils.isNotEmpty(entity.getName())
                 && ValidationUtils.isValidLong(entity.getNumberOfSeats())) {
-            throw new IllegalArgumentException("Auditorium " + entity + " is not a valid auditorium");
+            throw new IllegalArgumentException("Auditorium " + entity + " is not a valid Auditorium");
         }
     }
 }
