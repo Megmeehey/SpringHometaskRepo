@@ -1,10 +1,14 @@
 package epam.spring.repo.map;
 
+import epam.spring.repo.UserRepoI;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public class UserMapRepoTest {
+
+    private UserRepoI userRepo = new UserMapRepo();
+
 
     @Before
     public void setUp() {

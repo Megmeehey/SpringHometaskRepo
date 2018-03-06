@@ -21,18 +21,18 @@ public class UserMapRepo extends AbstractMapRepo<User> implements UserRepoI {
 
     @Override
     public User findByEmail(String email) {
-        final List<User> foundUsers = source.values()
+        final List<User> users = source.values()
                                             .stream()
                                             .filter(user -> user.getEmail()
                                                                 .equals(email))
                                             .collect(Collectors.toList());
 
-        if (foundUsers.size() > 1)
-            throw new InconsistentDatabaseState("More than one user by that email");
+        if (users.size() > 1)
+            throw new InconsistentDatabaseState("More than one user by that email " + email);
 
-        if (foundUsers.isEmpty())
+        if (users.isEmpty())
             return null;
 
-        return foundUsers.get(0);
+        return users.get(0);
     }
 }
