@@ -6,6 +6,8 @@ import epam.spring.repo.EventRepoI;
 import epam.spring.util.ValidationUtils;
 import lombok.NonNull;
 
+import java.time.LocalDate;
+import java.time.chrono.ChronoLocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,5 +35,22 @@ public class EventMapRepo extends AbstractMapRepo<Event> implements EventRepoI {
             return null;
 
         return events.get(0);
+    }
+
+    @Override
+    public List<Event> getForDateRange(LocalDate from, LocalDate to) {
+        return source.values()
+                     .stream()
+                     .filter(event -> event.getAirDates()
+                                           .stream()
+                                           .anyMatch(date -> from.isBefore(
+                                                   ChronoLocalDate.from(date))
+                                                   && to.isAfter(ChronoLocalDate.from(date))))
+                     .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Event> getNextEvents(LocalDate to) {
+        return this.getForDateRange(LocalDate.now(), to);
     }
 }

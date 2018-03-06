@@ -9,7 +9,6 @@ public class UserMapRepoTest {
 
     private UserRepoI userRepo = new UserMapRepo();
 
-
     @Before
     public void setUp() {
     }
