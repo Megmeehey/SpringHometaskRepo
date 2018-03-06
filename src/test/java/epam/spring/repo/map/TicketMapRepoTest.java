@@ -15,9 +15,12 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
@@ -36,6 +39,7 @@ public class TicketMapRepoTest {
     private static final String USER_TWO_EMAIL = "User two email";
     private static final String USER_TWO_FIRST_NAME = "User two first name";
     private static final String USER_TWO_LAST_NAME = "User two last name";
+    private static final Long TICKET_ONE_ID = 1L;
     private TicketRepoI ticketRepo = new TicketMapRepo();
 
     @Before
@@ -85,7 +89,7 @@ public class TicketMapRepoTest {
         return ticket;
     }
 
-        private Ticket buildTicket(LocalDateTime date, long seat, Event event, User user) {
+    private Ticket buildTicket(LocalDateTime date, long seat, Event event, User user) {
         Ticket ticket = new Ticket();
         ticket.setDateTime(date);
         ticket.setSeat(seat);
@@ -114,22 +118,72 @@ public class TicketMapRepoTest {
 
         assertNotNull(ticket.getId());
         assertNotNull(ticket.getStatus());
-
     }
 
     @Test
+    @SuppressWarnings("Duplicates")
     public void delete() {
+        assertNotNull(ticketRepo);
+
+        final Ticket ticket = ticketRepo.findById(3L);
+
+        assertNotNull(ticket);
+        assertNotNull(ticket.getId());
+        assertNotNull(ticket.getEvent());
+        assertNotNull(ticket.getUser());
+        assertNotNull(ticket.getDateTime());
+
+        ticketRepo.delete(ticket);
+
+        final Ticket ticketAfter = ticketRepo.findById(3L);
+
+        assertNull(ticketAfter);
     }
 
     @Test
+    @SuppressWarnings("Duplicates")
     public void deleteById() {
+        assertNotNull(ticketRepo);
+
+        final Ticket ticket = ticketRepo.findById(3L);
+
+        assertNotNull(ticket);
+        assertNotNull(ticket.getId());
+        assertNotNull(ticket.getEvent());
+        assertNotNull(ticket.getUser());
+        assertNotNull(ticket.getDateTime());
+
+        ticketRepo.deleteById(ticket.getId());
+
+        final Ticket ticketAfter = ticketRepo.findById(3L);
+
+        assertNull(ticketAfter);
     }
 
     @Test
     public void findById() {
+        final Ticket ticket = ticketRepo.findById(1L);
+
+        assertNotNull(ticket);
+        assertNotNull(ticket.getId());
+        assertEquals( TICKET_ONE_ID, ticket.getId());
+        assertNotNull(ticket.getEvent());
+        assertNotNull(ticket.getUser());
+
+        ticketRepo.deleteById(ticket.getId());
     }
 
     @Test
     public void findAll() {
+        final List<Ticket> tickets = ticketRepo.findAll();
+
+        assertNotNull(tickets);
+        assertFalse(tickets.isEmpty());
+        tickets.forEach(ticket -> {
+            assertNotNull(ticket);
+            assertNotNull(ticket.getId());
+            assertNotNull(ticket.getEvent());
+            assertNotNull(ticket.getUser());
+        });
     }
 }
