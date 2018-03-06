@@ -1,5 +1,6 @@
-package epam.spring.domain;
+package epam.spring.entity;
 
+import epam.spring.base.Status;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = {"status"})
-public abstract class DomainObject implements Serializable {
+public abstract class AbstractEntity implements Serializable {
     protected Long id;
     private Status status;
 }
