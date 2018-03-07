@@ -2,15 +2,17 @@ package epam.spring.service;
 
 import epam.spring.entity.Auditorium;
 import epam.spring.repo.AuditoriumRepoI;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.HashSet;
 import java.util.Set;
 
+@Setter
+@Getter
 public class AuditoriumService implements AuditoriumServiceI {
-    @Autowired
     private AuditoriumRepoI auditoriumRepo;
 
     @Nonnull

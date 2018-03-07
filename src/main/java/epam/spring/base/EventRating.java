@@ -10,5 +10,5 @@ public enum EventRating {
     HIGH(3);
 
     @Getter
-    private int grade;
+    private double factor;
 }

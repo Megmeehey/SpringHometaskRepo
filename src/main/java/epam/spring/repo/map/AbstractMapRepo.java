@@ -4,6 +4,8 @@ import epam.spring.base.Status;
 import epam.spring.entity.AbstractEntity;
 import epam.spring.repo.AbstractRepoI;
 import epam.spring.util.ValidationUtils;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.val;
 
 import java.util.ArrayList;
@@ -14,7 +16,9 @@ import java.util.concurrent.atomic.AtomicLong;
 public abstract class AbstractMapRepo<T extends AbstractEntity> implements AbstractRepoI<T> {
     private static final Status DEFAULT_STATUS = Status.Enabled;
     private final AtomicLong id;
-    final ConcurrentHashMap<Long, T> source;
+
+    @Getter @Setter
+    ConcurrentHashMap<Long, T> source;
 
     AbstractMapRepo() {
         id = new AtomicLong(1L);

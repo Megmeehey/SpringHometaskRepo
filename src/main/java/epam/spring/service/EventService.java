@@ -2,7 +2,8 @@ package epam.spring.service;
 
 import epam.spring.entity.Event;
 import epam.spring.repo.EventRepoI;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -11,8 +12,9 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+@Setter
+@Getter
 public class EventService implements EventServiceI {
-    @Autowired
     private EventRepoI eventRepo;
 
     @Nullable

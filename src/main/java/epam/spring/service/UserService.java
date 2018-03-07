@@ -2,14 +2,16 @@ package epam.spring.service;
 
 import epam.spring.entity.User;
 import epam.spring.repo.UserRepoI;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Collection;
 
+@Setter
+@Getter
 public class UserService implements UserServiceI {
-    @Autowired
     private UserRepoI userRepo;
 
     @Nullable
