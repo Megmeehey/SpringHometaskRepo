@@ -15,7 +15,8 @@ import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-@Getter @Setter
+@Getter
+@Setter
 public class BookingService implements BookingServiceI {
     private TicketRepoI ticketRepo;
     private DiscountService discountService;
@@ -48,7 +49,14 @@ public class BookingService implements BookingServiceI {
 
     @Override
     public void bookTickets(@Nonnull Set<Ticket> tickets) {
-        tickets.forEach(ticket -> ticketRepo.save(ticket));
+        tickets.forEach(ticket -> {
+            if (ticket.getUser() != null) {
+                ticketRepo.save(ticket);
+            } else {
+                ticket.setUser(new User());
+                ticketRepo.save(ticket);
+            }
+        });
     }
 
     @Nonnull

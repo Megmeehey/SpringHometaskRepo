@@ -4,14 +4,14 @@ Simple Spring practice.
 
 ## User roles
 
-#### ADMIN 
+#### ADMIN
 * enter events
 * view purchased tickets
 
 #### USER
 * register
 * view events with air dates and times
-* get ticket price, 
+* get ticket price,
 * buy tickets.
 
 ### Author

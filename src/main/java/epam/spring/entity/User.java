@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.NavigableSet;
 import java.util.TreeSet;
 
@@ -17,5 +18,6 @@ public class User extends AbstractEntity {
     private @NonNull String firstName;
     private @NonNull String lastName;
     private @NonNull String email;
+    private LocalDate dateOfBirth;
     private NavigableSet<Ticket> tickets = new TreeSet<>();
 }
