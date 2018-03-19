@@ -5,12 +5,14 @@ import epam.spring.exceptions.InconsistentDatabaseState;
 import epam.spring.repo.EventRepoI;
 import epam.spring.util.ValidationUtils;
 import lombok.NonNull;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Repository
 public class EventMapRepo extends AbstractMapRepo<Event> implements EventRepoI {
     private void isValid(@NonNull Event entity) {
         if (ValidationUtils.isValidLong(entity.getId())

@@ -13,6 +13,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -26,7 +29,7 @@ import static org.junit.Assert.assertNull;
 
 
 @Category(UnitTest.class)
-//@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 public class TicketMapRepoTest {
     private static final Status DEFAULT_STATUS = Status.Enabled;
     private static final long EVENT_ID = 3L;
@@ -40,7 +43,8 @@ public class TicketMapRepoTest {
     private static final String USER_TWO_FIRST_NAME = "User two first name";
     private static final String USER_TWO_LAST_NAME = "User two last name";
     private static final Long TICKET_ONE_ID = 1L;
-    private TicketRepoI ticketRepo = new TicketMapRepo();
+    @Autowired
+    private TicketRepoI ticketRepo;
 
     @Before
     public void setUp() {

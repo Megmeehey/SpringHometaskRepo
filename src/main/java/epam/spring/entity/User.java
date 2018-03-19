@@ -1,10 +1,13 @@
 package epam.spring.entity;
 
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
+import lombok.experimental.Accessors;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 import java.util.NavigableSet;
@@ -14,10 +17,12 @@ import java.util.TreeSet;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = {"firstName", "lastName", "email", "tickets"}, callSuper = true)
+@Accessors(chain = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class User extends AbstractEntity {
-    private @NonNull String firstName;
-    private @NonNull String lastName;
-    private @NonNull String email;
-    private LocalDate dateOfBirth;
-    private NavigableSet<Ticket> tickets = new TreeSet<>();
+    @NonNull String firstName;
+    @NonNull String lastName;
+    @NonNull String email;
+    LocalDate dateOfBirth;
+    NavigableSet<Ticket> tickets = new TreeSet<>();
 }

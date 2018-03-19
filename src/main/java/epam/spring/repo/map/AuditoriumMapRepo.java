@@ -5,12 +5,23 @@ import epam.spring.exceptions.InconsistentDatabaseState;
 import epam.spring.repo.AuditoriumRepoI;
 import epam.spring.util.ValidationUtils;
 import lombok.NonNull;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
+@Repository
 public class AuditoriumMapRepo extends AbstractMapRepo<Auditorium> implements AuditoriumRepoI {
+    private Set<Auditorium> auditoriumSet;
+
+    @Autowired
+    public AuditoriumMapRepo(Set<Auditorium> auditoriumSet) {
+        this.auditoriumSet = auditoriumSet;
+    }
+
     private void isValid(@NonNull Auditorium entity) {
                 if (ValidationUtils.isValidLong(entity.getId())
                 && ValidationUtils.isNotEmpty(entity.getName())

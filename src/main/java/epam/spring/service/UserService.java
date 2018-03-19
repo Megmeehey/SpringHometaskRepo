@@ -2,8 +2,10 @@ package epam.spring.service;
 
 import epam.spring.entity.User;
 import epam.spring.repo.UserRepoI;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -11,6 +13,7 @@ import java.util.Collection;
 
 @Setter
 @Getter
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class UserService implements UserServiceI {
     private UserRepoI userRepo;
 

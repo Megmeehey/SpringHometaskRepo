@@ -1,10 +1,13 @@
 package epam.spring.entity;
 
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
+import lombok.experimental.Accessors;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -16,10 +19,12 @@ import java.util.stream.LongStream;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = {"name", "numberOfSeats", "vipSeats"}, callSuper = true)
+@Accessors(chain = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Auditorium extends AbstractEntity {
-    private @NonNull String name;
-    private long numberOfSeats;
-    private Set<Long> vipSeats = Collections.emptySet();
+    @NonNull String name;
+    long numberOfSeats;
+    Set<Long> vipSeats = Collections.emptySet();
 
     /**
      * Counts how many vip seats are there in supplied <code>seats</code>

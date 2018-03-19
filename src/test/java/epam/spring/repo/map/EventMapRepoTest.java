@@ -11,6 +11,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -27,14 +30,15 @@ import static org.junit.Assert.assertThat;
 
 
 @Category(UnitTest.class)
-//@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 public class EventMapRepoTest {
     private static final Status DEFAULT_STATUS = Status.Enabled;
     private static final long THIRD_EVENT_ID = 3L;
     private static final String THIRD_EVENT_NAME = "Third event";
     private static final EventRating THIRD_EVENT_RATING = EventRating.LOW;
     private static final double THIRD_EVENT_PRICE = 10.0;
-    private EventRepoI eventRepo = new EventMapRepo();
+    @Autowired
+    private EventRepoI eventRepo;
 
     @Before
     public void setUp() {

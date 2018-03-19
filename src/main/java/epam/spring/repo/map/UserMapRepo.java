@@ -5,10 +5,12 @@ import epam.spring.exceptions.InconsistentDatabaseState;
 import epam.spring.repo.UserRepoI;
 import epam.spring.util.ValidationUtils;
 import lombok.NonNull;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Repository
 public class UserMapRepo extends AbstractMapRepo<User> implements UserRepoI {
     private void isValid(@NonNull User entity) {
         if (ValidationUtils.isValidLong(entity.getId())

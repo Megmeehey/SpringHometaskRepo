@@ -6,8 +6,11 @@ import epam.spring.entity.Ticket;
 import epam.spring.entity.User;
 import epam.spring.exceptions.InconsistentDatabaseState;
 import epam.spring.repo.TicketRepoI;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -17,6 +20,8 @@ import java.util.stream.Collectors;
 
 @Getter
 @Setter
+@Service
+@AllArgsConstructor(onConstructor = @__(@Autowired))
 public class BookingService implements BookingServiceI {
     private TicketRepoI ticketRepo;
     private DiscountService discountService;

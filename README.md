@@ -1,6 +1,7 @@
 # Application for managing a Movie Theater
 
-Simple Spring practice.
+Simple Spring practice. This is what I've done for now.
+I'll try to implement remaining part till monday.
 
 ## User roles
 

@@ -9,6 +9,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,7 +25,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 @Category(UnitTest.class)
-//@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 public class AuditoriumMapRepoTest {
 
     private static final Status DEFAULT_STATUS = Status.Enabled;
@@ -30,7 +33,8 @@ public class AuditoriumMapRepoTest {
     private static final long THIRD_AUDITORIUM_NUMBER_OF_SEATS = 50L;
     private static final String THIRD_AUDITORIUM_NAME = "Third Auditorium";
     private static final int THIRD_AUDITORIUM_NUMBER_OF_VIP_SEATS = 10;
-    private AuditoriumRepoI auditoriumRepo = new AuditoriumMapRepo();
+    @Autowired
+    private AuditoriumRepoI auditoriumRepo;
 
     @Before
     public void setUp() {

@@ -1,11 +1,14 @@
 package epam.spring.entity;
 
 import epam.spring.base.EventRating;
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
+import lombok.experimental.Accessors;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -18,12 +21,14 @@ import java.util.TreeSet;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode(exclude = {"name", "airDates", "basePrice", "rating", "auditoriums"}, callSuper = true)
+@Accessors(chain = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Event extends AbstractEntity {
-    private @NonNull String name;
-    private NavigableSet<LocalDateTime> airDates = new TreeSet<>();
-    private double basePrice;
-    private EventRating rating;
-    private NavigableMap<LocalDateTime, Auditorium> auditoriums = new TreeMap<>();
+    @NonNull String name;
+    NavigableSet<LocalDateTime> airDates = new TreeSet<>();
+    double basePrice;
+    EventRating rating;
+    NavigableMap<LocalDateTime, Auditorium> auditoriums = new TreeMap<>();
 
     /**
      * Checks if event is aired on particular <code>dateTime</code> and assigns

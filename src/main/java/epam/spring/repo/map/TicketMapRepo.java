@@ -5,12 +5,14 @@ import epam.spring.entity.Ticket;
 import epam.spring.repo.TicketRepoI;
 import epam.spring.util.ValidationUtils;
 import lombok.NonNull;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+@Repository
 public class TicketMapRepo extends AbstractMapRepo<Ticket> implements TicketRepoI {
     private ConcurrentHashMap<Long, Ticket> bookedTickets;
 
