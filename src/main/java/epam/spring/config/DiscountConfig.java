@@ -30,6 +30,4 @@ public class DiscountConfig {
     public DiscountStrategy discountStrategyTenthTicket() {
         return new DiscountStrategyTenthTicket();
     }
-
-
 }
